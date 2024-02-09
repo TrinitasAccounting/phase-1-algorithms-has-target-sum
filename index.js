@@ -11,11 +11,16 @@ function hasTargetSum(array, target) {
   // return false;
 
 
-  // let oppositesArray = [];
-
-  // for (let i = 0; i <= array.length; i++) {
-  //   oppositesArray.push(target - array[i])
-  // };
+  let oppositesArray = [];
+  for (let i = 0; i <= array.length; i++) {
+    if (oppositesArray.includes(array[i])) {
+      return true;
+    }
+    else {
+      oppositesArray.push(target - array[i])
+    }
+  };
+  return false;
 
   // for (let j = 0; j <= oppositesArray.length; j++) {
   //   if (oppositesArray[j] === (target / 2)) {
@@ -28,14 +33,14 @@ function hasTargetSum(array, target) {
   // return false;
 
 
-  const newSet = new Set();
-  for (let i = 0; i < array.length; i++) {
-    if (newSet.has(array[i])) {
-      return true;
-    }
-    newSet.add(target - array[i]);
-  }
-  return false;
+  // const newSet = new Set();
+  // for (let i = 0; i < array.length; i++) {
+  //   if (newSet.has(array[i])) {
+  //     return true;
+  //   }
+  //   newSet.add(target - array[i]);
+  // }
+  // return false;
 
 
 
