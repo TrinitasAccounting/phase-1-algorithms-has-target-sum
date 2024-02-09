@@ -1,5 +1,45 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+
+  // for (let i = 0; i <= array.length; i++) {
+  //   for (let j = i + 1; j <= array.length; j++) {
+  //     if ((array[i] + array[j]) === target) {
+  //       return true;
+  //     }
+  //   }
+  // }
+  // return false;
+
+
+  // let oppositesArray = [];
+
+  // for (let i = 0; i <= array.length; i++) {
+  //   oppositesArray.push(target - array[i])
+  // };
+
+  // for (let j = 0; j <= oppositesArray.length; j++) {
+  //   if (oppositesArray[j] === (target / 2)) {
+  //     oppositesArray.splice(j, 1);
+  //   }
+  //   else if (array.includes(oppositesArray[j])) {
+  //     return true
+  //   }
+  // }
+  // return false;
+
+
+  const newSet = new Set();
+  for (let i = 0; i < array.length; i++) {
+    if (newSet.has(array[i])) {
+      return true;
+    }
+    newSet.add(target - array[i]);
+  }
+  return false;
+
+
+
+
 }
 
 /* 
